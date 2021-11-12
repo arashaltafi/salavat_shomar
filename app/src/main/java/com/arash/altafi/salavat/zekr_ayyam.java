@@ -12,7 +12,6 @@ import java.util.Calendar;
 
 public class zekr_ayyam extends AppCompatActivity {
 
-
     ImageView imgShow;
     Calendar taqwim = Calendar.getInstance();
 
@@ -69,6 +68,7 @@ public class zekr_ayyam extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
     }
+
     // برای گذاشتن دکمه برگشت
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {

@@ -16,8 +16,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.pushpole.sdk.PushPole;
-
 public class MainActivity extends AppCompatActivity {
 
     Button btnZekr, btnSlvt, btnAbout,btnExit,btnBazar;
@@ -27,9 +25,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        PushPole.initialize(this,false);
-
 
         btnZekr =  findViewById(R.id.btn_zekr);
         btnSlvt =  findViewById(R.id.btn_slvt);

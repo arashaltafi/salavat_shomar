@@ -76,29 +76,6 @@ public class zekr_salavat extends AppCompatActivity {
                     editor.apply();
                 }
 
-
-//                nums = preferences.getString(NAME,null);
-//                if (nums == "")
-//                {
-//                    adad++;
-//                    txtShow.setText(String.valueOf(adad));
-//                    String a = txtShow.getText().toString().trim();
-//                    SharedPreferences.Editor editor = preferences.edit();
-//                    editor.putString(NAME, a);
-//                    editor.apply();
-//                }
-//                else
-//                {
-//                    adad = Integer.valueOf(nums);
-//                    adad++;
-//                    txtShow.setText(String.valueOf(adad));
-//                    String a = txtShow.getText().toString().trim();
-//                    SharedPreferences.Editor editor = preferences.edit();
-//                    editor.putString(NAME, a);
-//                    editor.apply();
-//                }
-
-
             }
         });
 
@@ -134,9 +111,6 @@ public class zekr_salavat extends AppCompatActivity {
 
         if (preferences.contains(NAME))
             txtShow.setText(preferences.getString(NAME, null));
-
-
-
 
         // برای گذاشتن دکمه برگشت
         if (getSupportActionBar() != null){

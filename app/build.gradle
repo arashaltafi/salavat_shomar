@@ -7,8 +7,8 @@ android {
         applicationId "com.arash.altafi.salavat"
         minSdkVersion 16
         targetSdkVersion 30
-        versionCode 3
-        versionName "1.2"
+        versionCode 1
+        versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -26,12 +26,4 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     implementation 'com.google.android.material:material:1.1.0'
     implementation 'com.github.ybq:Android-SpinKit:1.2.0'
-
-
-    // pushe
-    implementation 'com.pushpole.android:pushsdk:1.7.0'
-    implementation 'com.google.firebase:firebase-messaging:20.0.1'
-    implementation 'com.google.firebase:firebase-iid:20.0.1'
-    // pushe
-
 }
