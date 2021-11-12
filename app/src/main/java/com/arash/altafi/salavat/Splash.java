@@ -3,6 +3,8 @@ package com.arash.altafi.salavat;
 import androidx.annotation.ColorRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -17,6 +19,11 @@ import android.widget.RelativeLayout;
 import com.github.ybq.android.spinkit.SpinKitView;
 import com.github.ybq.android.spinkit.style.FadingCircle;
 import com.google.android.material.snackbar.Snackbar;
+
+/**
+ * Programming by Arash Altafi
+ * GitHub: arashaltafi
+ */
 
 public class Splash extends AppCompatActivity {
 
