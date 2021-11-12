@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.arash.altafi.salavat">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/salavat"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/salavat"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".zekr_salavat"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".zekr_ayyam"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".Splash"
+            android:screenOrientation="portrait"
+            android:theme="@style/splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+
+        <service android:name=".MyFcmService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.pushpole.sdk.fcm.FcmService"
+            tools:node="remove" />
+
+        <meta-data
+            android:name="com.pushpole.sdk.token"
+            android:value="PUSHPOLE_195111269503" />
+        <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true" />
+    </application>
+
+</manifest>

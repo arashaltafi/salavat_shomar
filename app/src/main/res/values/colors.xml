@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="light">#ffffff</color>
+    <color name="gold">#FFB300</color>
+    <color name="red">#c62828</color>
+    <color name="green">#00C853</color>
+    <color name="gray">#21252a</color>
+
+    <color name="colorPrimary">#424242</color>
+    <color name="colorPrimaryDark">#212121</color>
+    <color name="colorAccent">#616161</color>
+    <color name="Black">#000000</color>
+    <color name="Black0">#474646</color>
+    <color name="White">#ffffff</color>
+    <color name="Color1">#7C041E</color>
+    <color name="Color2">#02237e</color>
+    <color name="gray2">#c2c1c1</color>
+    <color name="Blue">#183ef9</color>
+    <color name="Blue0">#9ADBFC</color>
+    <color name="orange">#f1ae3b</color>
+    <color name="yellow">#f1f13b</color>
+
+    <color name="placeholder_bg">#dddddd</color>
+    <color name="item_name">#0c0c0c</color>
+    <color name="description">#1a1a1a</color>
+    <color name="chef">#777</color>
+    <color name="timestamp">#777</color>
+
+    <!-- dots active colors -->
+    <color name="dot_light_screen1">#7104b9</color>
+    <color name="dot_light_screen2">#bf78ef</color>
+    <color name="Green1">#209709</color>
+    <color name="Green0">#68e458</color>
+    <color name="Red1">#9c0306</color>
+    <color name="Red0">#f15a61</color>
+
+    <color name="mycolorWhite">#DDDDDD</color>
+    <color name="mycolorGray">#D3CECE</color>
+    <color name="btncolor">#4261bf</color>
+
+    <array name="array_true_answer">
+        <item>@color/Green1</item>
+        <item>@color/Green0</item>
+    </array>
+    <array name="array_false_answer">
+        <item>@color/Red1</item>
+        <item>@color/Red0</item>
+    </array>
+
+    <array name="array_game_color">
+        <item>@color/dot_light_screen1</item>
+        <item>@color/Green1</item>
+        <item>@color/Green0</item>
+        <item>@color/Red1</item>
+        <item>@color/Blue</item>
+        <item>@color/Red0</item>
+    </array>
+
+
+    //Color Swatches provided by http://designmodo.github.io/Flat-UI/
+    <color name="turquoise">#1abc9c</color>
+    <color name="green_sea">#16a085</color>
+    <color name="femerald">#2ecc71</color>
+    <color name="nephritis">#27ae60</color>
+    <color name="peter_river">#3498db</color>
+    <color name="belize_hole">#2980b9</color>
+    <color name="amethyst">#9b59b6</color>
+    <color name="wisteria">#8e44ad</color>
+    <color name="fbutton_color_wet_asphalt">#34495e</color>
+    <color name="fbutton_color_midnight_blue">#2c3e50</color>
+    <color name="fbutton_color_sun_flower">#f1c40f</color>
+    <color name="fbutton_color_orange">#f39c12</color>
+    <color name="fbutton_color_carrot">#e67e22</color>
+    <color name="fbutton_color_pumpkin">#d35400</color>
+    <color name="fbutton_color_alizarin">#e74c3c</color>
+    <color name="fbutton_color_pomegranate">#c0392b</color>
+    <color name="fbutton_color_clouds">#ecf0f1</color>
+    <color name="fbutton_color_silver">#bdc3c7</color>
+    <color name="fbutton_color_concrete">#95a5a6</color>
+    <color name="fbutton_color_asbestos">#7f8c8d</color>
+
+    <array name="array_dot_active">
+        <item>@color/mycolorWhite</item>
+    </array>
+    <array name="array_dot_inactive">
+        <item>@color/mycolorGray</item>
+
+    </array>
+</resources>
