@@ -1,69 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    android:background="@color/green"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/green"
     android:orientation="vertical">
 
     <LinearLayout
-        android:layout_centerInParent="true"
         android:id="@+id/s"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginBottom="20dp"
-        android:layoutDirection="rtl"
-        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="20dp"
+        android:layoutDirection="rtl"
         android:orientation="horizontal">
+
         <TextView
             android:layout_width="0dp"
-            android:layout_weight="0.7"
             android:layout_height="wrap_content"
-            android:text="تعداد صلوات ها :"
             android:layout_gravity="center"
+            android:layout_weight="0.7"
+            android:fontFamily="@font/homa"
             android:gravity="center"
-            android:textSize="20sp"
+            android:text="تعداد صلوات ها :"
             android:textColor="@color/light"
-            android:fontFamily="@font/homa"/>
+            android:textSize="20sp" />
 
-    <TextView
-        android:layout_width="0dp"
-        android:layout_weight="0.5"
-        android:layout_height="wrap_content"
-        android:id="@+id/txt_show"
-        android:text="0"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:textSize="40sp"
-        android:textColor="@color/light"
-        android:fontFamily="@font/homa"/>
+        <TextView
+            android:id="@+id/tvShow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.5"
+            android:fontFamily="@font/homa"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/light"
+            android:textSize="40sp" />
     </LinearLayout>
 
     <Button
-        android:textStyle="bold"
-        android:textSize="30sp"
-        android:fontFamily="@font/ziba"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:layout_alignParentTop="true"
+        android:id="@+id/btnDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="پاک کردن"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
         android:background="@null"
-        android:id="@+id/delete"
-        android:textColor="@color/red"/>
-
-
+        android:fontFamily="@font/ziba"
+        android:text="پاک کردن"
+        android:textColor="@color/red"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <ImageView
-        android:layout_marginBottom="5dp"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/imageButton"
+        android:id="@+id/ivSalavat"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_alignParentBottom="true"
-        android:src="@drawable/salavat1"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:src="@drawable/salavat1" />
 
 </RelativeLayout>

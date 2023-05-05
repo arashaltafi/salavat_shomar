@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">صلوات شمار + ذکر هفته</string>
+    <string name="other_apps">دیگر برنامه ها</string>
+    <string name="exit">خروج</string>
+    <string name="about_me">درباره مــا</string>
+    <string name="arashaltafi">"طراح برنامه : آرش الـــــطافی"</string>
+    <string name="salavat_counter">صلوات شمار</string>
+    <string name="week_zekr">ذکرایام هفته</string>
+    <string name="see_other_apps">برای مشاهده دیگر برنامه ها لطفا کافه بازار را نصب نمایید</string>
+    <string name="exit_app">آیا می خواهید از این قسمت خارج شوید؟</string>
+    <string name="yes">بلـــه</string>
+    <string name="no">خیـــر</string>
+    <string name="saturday">شــنبه</string>
+    <string name="sunday">یکــشنبه</string>
+    <string name="monday">دوشنبه</string>
+    <string name="tuesday">سـه شنبه</string>
+    <string name="wednesday">چهارشنبه</string>
+    <string name="thursday">پنج شنبه</string>
+    <string name="friday">جمعه</string>
+    <string name="attention">توجه</string>
+    <string name="delete_salavats">آیا می خواهید تعداد صلوات ها را پاک کنید؟</string>
+    <string name="click_to_salavat">بر روی عکس کلیک کنید تا صلوات شما ثبت شود</string>
 </resources>

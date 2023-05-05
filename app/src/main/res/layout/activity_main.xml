@@ -1,106 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#24CBE0">
-
-
-<LinearLayout
-    android:layout_alignParentBottom="true"
     android:layout_gravity="center"
+    android:background="#24CBE0"
     android:gravity="center"
-    android:layout_marginRight="10dp"
-    android:layout_marginLeft="10dp"
-    android:layout_marginTop="20dp"
-    android:layout_marginBottom="30dp"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="20dp">
 
-
-    <ImageView
-        android:src="@drawable/salavat1"
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/image"
         android:layout_width="250dp"
         android:layout_height="0dp"
-        android:layout_weight="0.5"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:id="@+id/image"/>
-
+        android:layout_weight="0.5"
+        android:src="@drawable/salavat1" />
 
     <Button
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:fontFamily="@font/ziba"
-        android:background="@drawable/buttonstyle"
-        android:id="@+id/btn_zekr"
+        android:id="@+id/btnZekr"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
         android:layout_weight="0.1"
-        android:text="ذکرایام هفته"
+        android:background="@drawable/buttonstyle"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/ziba"
+        android:text="@string/week_zekr"
         android:textSize="25sp"
         android:textStyle="bold" />
 
     <Button
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:fontFamily="@font/ziba"
-        android:background="@drawable/buttonstyle"
-        android:id="@+id/btn_slvt"
+        android:id="@+id/btnSalavat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.1"
-        android:text="صلوات شمار"
-        android:textSize="25sp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="15dp"
-        android:textStyle="bold"/>
+        android:layout_marginRight="20dp"
+        android:layout_weight="0.1"
+        android:background="@drawable/buttonstyle"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/ziba"
+        android:text="@string/salavat_counter"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <Button
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:fontFamily="@font/ziba"
-        android:background="@drawable/buttonstyle"
-        android:id="@+id/btn_About"
+        android:id="@+id/btnAbout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.1"
-        android:text="درباره مــا"
-        android:textSize="25sp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="15dp"
-        android:textStyle="bold"/>
+        android:layout_marginRight="20dp"
+        android:layout_weight="0.1"
+        android:background="@drawable/buttonstyle"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/ziba"
+        android:text="@string/about_me"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <Button
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:fontFamily="@font/ziba"
-        android:background="@drawable/buttonstyle"
-        android:id="@+id/btn_bazar"
+        android:id="@+id/btnBazaar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.1"
-        android:text="دیگر برنامه ها"
-        android:textSize="25sp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="15dp"
-        android:textStyle="bold"/>
+        android:layout_marginRight="20dp"
+        android:layout_weight="0.1"
+        android:background="@drawable/buttonstyle"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/ziba"
+        android:text="@string/other_apps"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <Button
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:fontFamily="@font/ziba"
-        android:background="@drawable/buttonstyle"
-        android:id="@+id/btn_exit"
+        android:id="@+id/btnExit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.1"
-        android:text="خروج"
-        android:textSize="25sp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="15dp"
-        android:textStyle="bold"/>
+        android:layout_marginRight="20dp"
+        android:layout_weight="0.1"
+        android:background="@drawable/buttonstyle"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/ziba"
+        android:text="@string/exit"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
-</LinearLayout>
-
-</RelativeLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

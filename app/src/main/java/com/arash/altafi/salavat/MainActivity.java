@@ -1,6 +1,5 @@
 package com.arash.altafi.salavat;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
@@ -11,14 +10,14 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+//Apr 06 2020
 public class MainActivity extends AppCompatActivity {
 
-    Button btnZekr, btnSlvt, btnAbout,btnExit,btnBazar;
+    Button btnZekr, btnSlvt, btnAbout, btnExit, btnBazar;
     private boolean doubleBackToExitPressedOnce;
 
     @Override
@@ -26,25 +25,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnZekr =  findViewById(R.id.btn_zekr);
-        btnSlvt =  findViewById(R.id.btn_slvt);
-        btnAbout = findViewById(R.id.btn_About);
-        btnExit = findViewById(R.id.btn_exit);
-        btnBazar = findViewById(R.id.btn_bazar);
+        bindViews();
+        init();
+    }
 
-
+    private void init() {
         btnZekr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mintent = new Intent(MainActivity.this,zekr_ayyam.class);
-                startActivity(mintent);
+                startActivity(new Intent(MainActivity.this, ZekrAyyam.class));
             }
         });
 
         btnSlvt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, zekr_salavat.class));
+                startActivity(new Intent(MainActivity.this, ZekrSalavat.class));
             }
         });
 
@@ -52,10 +48,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 new AlertDialog.Builder(MainActivity.this)
-                        // .setIcon(R.drawable.icon)
                         .setIcon(R.drawable.arash_pic)
-                        .setTitle("درباره مـــا")
-                        .setMessage("طراح برنامه : آرش الـــــطافی")
+                        .setTitle(getString(R.string.about_me))
+                        .setMessage(getString(R.string.arashaltafi))
                         .show();
             }
         });
@@ -64,17 +59,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 new AlertDialog.Builder(MainActivity.this)
-                        .setTitle("خروج")
+                        .setTitle(getString(R.string.exit))
                         .setCancelable(true)
                         .setIcon(R.drawable.ic_exit_zekr)
-                        .setMessage("آیا می خواهید از این قسمت خارج شوید؟")
-                        .setPositiveButton("بلـــه", new DialogInterface.OnClickListener() {
+                        .setMessage(getString(R.string.exit_app))
+                        .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
                             @Override
-                            public void onClick(DialogInterface dialog, int which) { ;
+                            public void onClick(DialogInterface dialog, int which) {
                                 finish();
                             }
                         })
-                        .setNegativeButton("خیـــر", new DialogInterface.OnClickListener() {
+                        .setNegativeButton(getString(R.string.no), new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 dialog.cancel();
@@ -87,30 +82,24 @@ public class MainActivity extends AppCompatActivity {
         btnBazar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-//                boolean install = isPackageInstalled(MainActivity.this , "com.farsitel.bazaar");
-//                if (install) {
-//                    Intent intent = new Intent(Intent.ACTION_VIEW);
-//                    intent.setData(Uri.parse("bazaar://collection?slug=by_author&aid=" + "arashaltafi"));
-//                    intent.setPackage("com.farsitel.bazaar");
-//                    startActivity(intent);
-//                } else
-//                    Toast.makeText(getApplicationContext(), "برای مشاهده دیگر برنامه ها لطفا کافه بازار را نصب نمایید", Toast.LENGTH_SHORT).show();
-
-
-
-
-
-                String url = "https://myket.ir/app/com.arash.altafi.joke";
-                Intent intent = new Intent();
-                intent.setAction(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse(url));
-                startActivity(intent);
-
+                boolean install = isPackageInstalled(MainActivity.this, "com.farsitel.bazaar");
+                if (install) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse("bazaar://collection?slug=by_author&aid=" + "arashaltafi"));
+                    intent.setPackage("com.farsitel.bazaar");
+                    startActivity(intent);
+                } else
+                    Toast.makeText(getApplicationContext(), getString(R.string.see_other_apps), Toast.LENGTH_SHORT).show();
             }
         });
+    }
 
-
+    private void bindViews() {
+        btnZekr = findViewById(R.id.btnZekr);
+        btnSlvt = findViewById(R.id.btnSalavat);
+        btnAbout = findViewById(R.id.btnAbout);
+        btnExit = findViewById(R.id.btnExit);
+        btnBazar = findViewById(R.id.btnBazaar);
     }
 
     public static boolean isPackageInstalled(Context context, String packageName) {

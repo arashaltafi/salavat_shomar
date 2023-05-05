@@ -10,72 +10,73 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 
-public class zekr_ayyam extends AppCompatActivity {
+public class ZekrAyyam extends AppCompatActivity {
 
     ImageView imgShow;
-    Calendar taqwim = Calendar.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_zekr_ayyam);
 
-        imgShow = findViewById(R.id.img_show);
+        bindViews();
+        init();
+    }
 
-        int DayOfWeek = taqwim.get(Calendar.DAY_OF_WEEK);
+    private void bindViews() {
+        imgShow = findViewById(R.id.ivShow);
+    }
 
+    private void init() {
+        int DayOfWeek = Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
 
-        String RoozHafte = null;
+        String weekDay = null;
         switch (DayOfWeek) {
             case Calendar.SATURDAY:
-                RoozHafte = "شــنبه";
+                weekDay = getString(R.string.saturday);
                 imgShow.setImageResource(R.drawable.shanbe);
                 break;
             case Calendar.SUNDAY:
-                RoozHafte = "یکــشنبه";
+                weekDay = getString(R.string.sunday);
                 imgShow.setImageResource(R.drawable.yekshanbe);
                 break;
             case Calendar.MONDAY:
-                RoozHafte = "دوشنبه";
+                weekDay = getString(R.string.monday);
                 imgShow.setImageResource(R.drawable.doshanbe);
                 break;
             case Calendar.TUESDAY:
-                RoozHafte = "سـه شنبه";
+                weekDay = getString(R.string.tuesday);
                 imgShow.setImageResource(R.drawable.seshanbe);
                 break;
             case Calendar.WEDNESDAY:
-                RoozHafte = "چهارشنبه";
+                weekDay = getString(R.string.wednesday);
                 imgShow.setImageResource(R.drawable.chaharsh);
                 break;
             case Calendar.THURSDAY:
-                RoozHafte = "پنج شنبه";
+                weekDay = getString(R.string.thursday);
                 imgShow.setImageResource(R.drawable.panjshanbe);
                 break;
             case Calendar.FRIDAY:
-                RoozHafte = "جمعه";
+                weekDay = getString(R.string.friday);
                 imgShow.setImageResource(R.drawable.jome);
                 break;
             default:
-
                 break;
-
         }
 
-        Toast.makeText(this, RoozHafte, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, weekDay, Toast.LENGTH_SHORT).show();
 
-        // برای گذاشتن دکمه برگشت
-        if (getSupportActionBar() != null){
+        if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
     }
 
-    // برای گذاشتن دکمه برگشت
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-        if (id == android.R.id.home){
+        if (id == android.R.id.home) {
             finish();
-            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
         }
         return super.onOptionsItemSelected(item);
     }
@@ -83,6 +84,6 @@ public class zekr_ayyam extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         finish();
-        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 }
