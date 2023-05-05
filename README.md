@@ -2,12 +2,19 @@
 
 صلوات شمار + ذکر هفته
 
-امکانات :
-
-امکان ذخیره شدن تعداد صلوات های فرستاده شده
+ذخیره شدن تعداد صلوات های فرستاده شده
 
 مشاهده ی ذکر های هفته
 
-و ...
+<img
+  src="/screen_shot/1.png"
+  alt="Screen Shot 1"
+  title="Screen Shot 1"
+  style="display: inline-block; margin: 0 auto; height: 680px; width: 380px">
 
-التماس دعا
+
+<img
+  src="/screen_shot/2.png"
+  alt="Screen Shot 2"
+  title="Screen Shot 2"
+  style="display: inline-block; margin: 0 auto; height: 680px; width: 380px">
