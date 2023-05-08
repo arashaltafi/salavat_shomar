@@ -5,66 +5,65 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.arash.altafi.salavat.databinding.ActivityZekrAyyamBinding;
 
 import java.util.Calendar;
 
 public class ZekrAyyam extends AppCompatActivity {
 
-    ImageView imgShow;
+    private ActivityZekrAyyamBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_zekr_ayyam);
+        binding = ActivityZekrAyyamBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        bindViews();
         init();
-    }
-
-    private void bindViews() {
-        imgShow = findViewById(R.id.ivShow);
     }
 
     private void init() {
         int DayOfWeek = Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
 
         String weekDay = null;
+        int drawableResource = R.drawable.salavat1;
         switch (DayOfWeek) {
             case Calendar.SATURDAY:
                 weekDay = getString(R.string.saturday);
-                imgShow.setImageResource(R.drawable.shanbe);
+                drawableResource = R.drawable.shanbe;
                 break;
             case Calendar.SUNDAY:
                 weekDay = getString(R.string.sunday);
-                imgShow.setImageResource(R.drawable.yekshanbe);
+                drawableResource = R.drawable.yekshanbe;
                 break;
             case Calendar.MONDAY:
                 weekDay = getString(R.string.monday);
-                imgShow.setImageResource(R.drawable.doshanbe);
+                drawableResource = R.drawable.doshanbe;
                 break;
             case Calendar.TUESDAY:
                 weekDay = getString(R.string.tuesday);
-                imgShow.setImageResource(R.drawable.seshanbe);
+                drawableResource = R.drawable.seshanbe;
                 break;
             case Calendar.WEDNESDAY:
                 weekDay = getString(R.string.wednesday);
-                imgShow.setImageResource(R.drawable.chaharsh);
+                drawableResource = R.drawable.chaharsh;
                 break;
             case Calendar.THURSDAY:
                 weekDay = getString(R.string.thursday);
-                imgShow.setImageResource(R.drawable.panjshanbe);
+                drawableResource = R.drawable.panjshanbe;
                 break;
             case Calendar.FRIDAY:
                 weekDay = getString(R.string.friday);
-                imgShow.setImageResource(R.drawable.jome);
+                drawableResource = R.drawable.jome;
                 break;
             default:
                 break;
         }
 
         Toast.makeText(this, weekDay, Toast.LENGTH_SHORT).show();
+        binding.ivShow.setImageResource(drawableResource);
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);

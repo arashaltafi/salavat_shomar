@@ -10,96 +10,67 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
-//Apr 06 2020
+import com.arash.altafi.salavat.databinding.ActivityMainBinding;
+
 public class MainActivity extends AppCompatActivity {
 
-    Button btnZekr, btnSlvt, btnAbout, btnExit, btnBazar;
+    private ActivityMainBinding binding;
     private boolean doubleBackToExitPressedOnce;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        bindViews();
         init();
     }
 
     private void init() {
-        btnZekr.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, ZekrAyyam.class));
-            }
-        });
+        binding.btnZekr.setOnClickListener(v ->
+                startActivity(new Intent(MainActivity.this, ZekrAyyam.class))
+        );
 
-        btnSlvt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, ZekrSalavat.class));
-            }
-        });
+        binding.btnSalavat.setOnClickListener(v ->
+                startActivity(new Intent(MainActivity.this, ZekrSalavat.class))
+        );
 
-        btnAbout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        binding.btnAbout.setOnClickListener(v ->
                 new AlertDialog.Builder(MainActivity.this)
                         .setIcon(R.drawable.arash_pic)
                         .setTitle(getString(R.string.about_me))
                         .setMessage(getString(R.string.arashaltafi))
-                        .show();
-            }
-        });
+                        .setNeutralButton("website", (dialogInterface, i) -> {
+                            Intent intent = new Intent(Intent.ACTION_VIEW);
+                            intent.setData(Uri.parse("https://arashaltafi.ir"));
+                            startActivity(intent);
+                        })
+                        .show()
+        );
 
-        btnExit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        binding.btnExit.setOnClickListener(v ->
                 new AlertDialog.Builder(MainActivity.this)
                         .setTitle(getString(R.string.exit))
                         .setCancelable(true)
                         .setIcon(R.drawable.ic_exit_zekr)
                         .setMessage(getString(R.string.exit_app))
-                        .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                finish();
-                            }
-                        })
-                        .setNegativeButton(getString(R.string.no), new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.cancel();
-                            }
-                        })
-                        .show();
-            }
-        });
+                        .setPositiveButton(getString(R.string.yes), (dialog, which) -> finish())
+                        .setNegativeButton(getString(R.string.no), (dialog, which) -> dialog.cancel())
+                        .show()
+        );
 
-        btnBazar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                boolean install = isPackageInstalled(MainActivity.this, "com.farsitel.bazaar");
-                if (install) {
-                    Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse("bazaar://collection?slug=by_author&aid=" + "arashaltafi"));
-                    intent.setPackage("com.farsitel.bazaar");
-                    startActivity(intent);
-                } else
-                    Toast.makeText(getApplicationContext(), getString(R.string.see_other_apps), Toast.LENGTH_SHORT).show();
-            }
+        binding.btnBazaar.setOnClickListener(v -> {
+            boolean install = isPackageInstalled(MainActivity.this, "com.farsitel.bazaar");
+            if (install) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("bazaar://collection?slug=by_author&aid=" + "arashaltafi"));
+                intent.setPackage("com.farsitel.bazaar");
+                startActivity(intent);
+            } else
+                Toast.makeText(getApplicationContext(), getString(R.string.see_other_apps), Toast.LENGTH_SHORT).show();
         });
-    }
-
-    private void bindViews() {
-        btnZekr = findViewById(R.id.btnZekr);
-        btnSlvt = findViewById(R.id.btnSalavat);
-        btnAbout = findViewById(R.id.btnAbout);
-        btnExit = findViewById(R.id.btnExit);
-        btnBazar = findViewById(R.id.btnBazaar);
     }
 
     public static boolean isPackageInstalled(Context context, String packageName) {
@@ -118,12 +89,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "برای خروج از برنامه بکبار دیگر کلید برگشت را فشار دهید", Toast.LENGTH_SHORT).show();
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                doubleBackToExitPressedOnce = false;
-            }
-        }, 4000);
+        Toast.makeText(this, getString(R.string.press_back_to_finish), Toast.LENGTH_SHORT).show();
+        new Handler().postDelayed(() -> doubleBackToExitPressedOnce = false, 4000);
     }
 }
