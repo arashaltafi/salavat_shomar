@@ -18,7 +18,9 @@
     <string name="thursday">پنج شنبه</string>
     <string name="friday">جمعه</string>
     <string name="attention">توجه</string>
+    <string name="numbers">تعداد صلوات ها :</string>
     <string name="delete_salavats">آیا می خواهید تعداد صلوات ها را پاک کنید؟</string>
     <string name="click_to_salavat">بر روی عکس کلیک کنید تا صلوات شما ثبت شود</string>
     <string name="press_back_to_finish">برای خروج از برنامه بکبار دیگر کلید برگشت را فشار دهید</string>
+    <string name="delete">پاک کردن</string>
 </resources>
