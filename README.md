@@ -1,10 +1,6 @@
 # salavat_shomar
 
-صلوات شمار + ذکر هفته
-
-ذخیره شدن تعداد صلوات های فرستاده شده
-
-مشاهده ی ذکر های هفته
+see project in [myket](https://myket.ir/app/com.arash.altafi.salavat)
 
 <img
   src="/screen_shot/1.png"
